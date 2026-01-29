@@ -13,7 +13,7 @@ import {
 export const SideMenu: React.FC<React.ComponentProps<typeof Sheet>> = () => {
   return (
     <Sheet>
-      <SheetTrigger asChild className="block sm:hidden float-end">
+      <SheetTrigger asChild>
         <Button variant="outline">Open</Button>
       </SheetTrigger>
       <SheetContent>

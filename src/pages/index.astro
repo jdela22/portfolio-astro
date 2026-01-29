@@ -7,7 +7,33 @@ import { Header } from '../components/Header.tsx'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
-<Layout>
-	<Header />
+<script is:inline>
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+ 
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script>
+<Layout >
+	<Header client:load />
+	<section class="flex flex-col md:flex-row gap-4 mt-10 items-center text-sm px-30">
+		<img class="rounded-full size-60 " src="../../public/profilepic.jpg">
+		PUT SOCIAL LINKS HERE (LINKEDIN ,github, email, calendly?)
+		<article >
+		<p>Hi! I'm Jared Delapasse. I built this site to learn a bit about the astro framework and to act as a quasi-blog for the latest things I am interested in or any books I may be reading.</p>
+			<!-- <p>Professionally my work leans frontend, but my interests are not limited to the browser. I enjoy building well-designed, performant, and overall quality software.</p> -->
+			<!-- <p>In my free time I try to learn skills and concepts I don't come across at work. Currently, I'm wrapping up an exellent series by Thorsten Ball about Interpreters and compilers.</p> -->
+		</article>
+	</section>
 </Layout>

@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { CircleAlertIcon } from "lucide-react";
 import { SideMenu } from "./SideMenu";
+import { ModeToggle } from "./ModeToggle";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -53,10 +54,17 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
   props,
 ) => {
   return (
-    <NavigationMenu className="w-full justify-end pr-20" {...props}>
-      <NavigationMenuList className="sm:flex hidden">
+    <NavigationMenu
+      className="w-full justify-end pr-20"
+      {...props}
+      viewport={false}
+    >
+      <NavigationMenuList className="md:flex hidden">
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <ModeToggle />
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Stuff I use</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="w-96">
               <ListItem href="/docs" title="Introduction">
@@ -71,9 +79,9 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem className="hidden md:flex">
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-          <NavigationMenuContent>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Something</NavigationMenuTrigger>
+          <NavigationMenuContent className="right-0">
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
                 <ListItem
@@ -88,7 +96,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Reading</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px]">
               <li>
@@ -120,7 +128,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
-      <NavigationMenuList className="block sm:hidden">
+      <NavigationMenuList className="block md:hidden">
         <NavigationMenuItem>
           <SideMenu />
         </NavigationMenuItem>
