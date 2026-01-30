@@ -1,14 +1,16 @@
 ---
+import compilerCover from "../assets/compiler-cover.jpg";
+import ddia from "../assets/ddia-cover.jpeg";
 import interpreterCover from "../assets/interpreter-cover.jpg";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<!-- <ReadingComponent client:only='react' /> -->
 <Layout>
-	<!-- <img class="size-60 " src="../assets/interpreter-cover.jpg"> -->
 	<article class="flex flex-col gap-3 items-center">
+		<h3 class="self-start text-xl font-bold underline underline-offset-4">
+			Completed:
+		</h3>
 		<img class="size-60 " src={interpreterCover.src}>
-		<p>This next p should come after interpreter:</p>
 		<p>
 			This book walks you through the creation of an interpreter for an
 			imaginary programming language. It is very basic, and syntactially looks
@@ -24,17 +26,27 @@ import Layout from "../layouts/Layout.astro";
 			return a result.
 		</p>
 
-		<!-- Maybe put this in idk? -->
-		<!-- I previously had no knowledge of go, but admired the simplicity of  -->
+		<h3 class="self-start text-xl font-bold underline underline-offset-4">
+			Currently Reading:
+		</h3>
+		<img class="size-60" src={compilerCover.src}>
+		<p>
+			A sequel to the interpreter book and goes a bit further and walks through
+			the process of setting up of using a compiler rather than an evaluator to
+			traverse the AST. It extends the previously constructed interpreter to
+			include the production of bytecode, as well as constructing a minimal
+			virtual machine to execute the bytecode.
+		</p>
+		<h3 class="self-start text-xl underline underline-offset-4">Next up...</h3>
 
-		<p>This next p should come after compiler:</p>
-
-		<p>This next p should come after data driven design book:</p>
+		<img class="size-60" src={ddia.src}>
 		<p>
 			With LLMs becoming a more integrated piece of development workflows, the
-			primary role of a software engineer is becoming more focused on developing
-			testing strategies as well as an emphasis on developing fault-tolerant and
-			scalable systems.
+			primary role of a software engineer is becoming less about writing code
+			and evolving more towards an emphasis on developing fault-tolerant,
+			scalable systems. This book comes highly recommended by many experienced
+			software developers online and I'm looking forward to gaining more insight
+			to working with data on a mass scale.
 		</p>
 	</article>
 </Layout>

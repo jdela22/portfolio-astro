@@ -1,8 +1,31 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import neovim from "../assets/neovim.png";
 ---
 
-Neovim
-Tmux
-Both of these tools require a fair amount of configuration. If you're curious how I set mine up or you're looking for a jumping off point, 
-you can take a look at my dotfiles. I keep them pretty up-to-date for my own use when setting up new machines. LINK TO DOTFILES
-
+<Layout>
+	<article class="flex flex-col items-center">
+		<h2 class="self-start">Terminal Things:</h2>
+		<div>
+			I tend to use the terminal for most of my development workflow. These are
+			some of the things I use on a daily basis in order to be as efficient as
+			possible.
+		</div>
+		<ul class="list-disc">
+			<li>
+				<ul>Neovim</ul>
+				<li>
+					Neovim has been my main editor for almost 2 years. It has an
+					incredibly high learning curve but once you've mastered vim motions
+					and gained some understanding of the underlying processes it is a
+					fantastic development experience.
+				</li>
+			</li>
+			<li>TMUX</li>
+		</ul>
+		Neovim Tmux Both of these tools require a fair amount of configuration. If
+		you're curious how I set mine up or you're looking for a jumping off point,
+		you can take a look at my dotfiles. I keep them pretty up-to-date for my own
+		use when setting up new machines. LINK TO DOTFILES
+	</article>
+</Layout>
