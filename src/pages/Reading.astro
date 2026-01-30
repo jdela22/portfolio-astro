@@ -1,6 +1,40 @@
 ---
-import { Reading as ReadingComponent } from '../components/Reading.tsx'
+import interpreterCover from "../assets/interpreter-cover.jpg";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<ReadingComponent client:only='react' />
+<!-- <ReadingComponent client:only='react' /> -->
+<Layout>
+	<!-- <img class="size-60 " src="../assets/interpreter-cover.jpg"> -->
+	<article class="flex flex-col gap-3 items-center">
+		<img class="size-60 " src={interpreterCover.src}>
+		<p>This next p should come after interpreter:</p>
+		<p>
+			This book walks you through the creation of an interpreter for an
+			imaginary programming language. It is very basic, and syntactially looks
+			similar to your more basic scripting languages.
+		</p>
+		<p>
+			It helped me gain an even deeper understanding of various javascript
+			concepts that I had previously considered myself to have understood well.
+			Things like closures and higher order functions become much clearer and
+			seem almost natural when you have implemented them. It walks through the
+			creation of a lexer to convert programs into tokens, a parser to create
+			the abstract syntaxs tree, and an evaluator that traverses the tree to
+			return a result.
+		</p>
 
+		<!-- Maybe put this in idk? -->
+		<!-- I previously had no knowledge of go, but admired the simplicity of  -->
+
+		<p>This next p should come after compiler:</p>
+
+		<p>This next p should come after data driven design book:</p>
+		<p>
+			With LLMs becoming a more integrated piece of development workflows, the
+			primary role of a software engineer is becoming more focused on developing
+			testing strategies as well as an emphasis on developing fault-tolerant and
+			scalable systems.
+		</p>
+	</article>
+</Layout>

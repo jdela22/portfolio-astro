@@ -1,37 +1,26 @@
 ---
-import {SideMenu} from '../components/SideMenu.tsx'
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import { Header } from '../components/Header.tsx'
+import { Github, Linkedin, Mail } from "lucide-react";
+import profilePic from "../assets/profilepic.jpg";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-<script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
- 
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
-</script>
-<Layout >
-	<Header client:load />
-	<section class="flex flex-col md:flex-row gap-4 mt-10 items-center text-sm px-30">
-		<img class="rounded-full size-60 " src="../../public/profilepic.jpg">
-		PUT SOCIAL LINKS HERE (LINKEDIN ,github, email, calendly?)
-		<article >
-		<p>Hi! I'm Jared Delapasse. I built this site to learn a bit about the astro framework and to act as a quasi-blog for the latest things I am interested in or any books I may be reading.</p>
+
+<Layout>
+	<section class="flex flex-col gap-8 items-center text-sm">
+		<img class="rounded-full size-60 " src={profilePic.src}>
+		<div class="flex gap-3">
+			<Linkedin className="cursor-pointer" />
+			<Github className="cursor-pointer" />
+			<Mail className="cursor-pointer" />
+		</div>
+		<article>
+			<p>
+				Hi! I'm Jared Delapasse. I built this site to learn a bit about the
+				astro framework and to act as a quasi-blog for the latest things I am
+				interested in or any books I may be reading.
+			</p>
 			<!-- <p>Professionally my work leans frontend, but my interests are not limited to the browser. I enjoy building well-designed, performant, and overall quality software.</p> -->
 			<!-- <p>In my free time I try to learn skills and concepts I don't come across at work. Currently, I'm wrapping up an exellent series by Thorsten Ball about Interpreters and compilers.</p> -->
 		</article>
