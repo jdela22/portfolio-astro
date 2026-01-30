@@ -20,6 +20,7 @@ import { Header } from "../components/Header.tsx";
 		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 	}
 </script>
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -29,15 +30,16 @@ import { Header } from "../components/Header.tsx";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
-	<Header client:load />
-		<main class="px-30 mt-10 "><slot  /></main>
+	<body >
+	<Header client:load/>
+		<main class="lg:px-56 xl:px-90 px-30  mt-10 "><slot  /></main>
 	</body>
 </html>
 
 <style>
 	html,
 	body {
+		font-family: 'Geist Mono Variable', monospace;
 		margin: 0;
 		width: 100%;
 		height: 100%;

@@ -121,3 +121,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@theme {
+  --font-mono: "Geist";
+  --font-mono: (--font-geist-mono);
+}
+
