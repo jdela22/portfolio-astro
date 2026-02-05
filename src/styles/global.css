@@ -127,3 +127,19 @@
   --font-mono: (--font-geist-mono);
 }
 
+html {
+  background-color: #ff00ff !important;
+}
+
+/* Needed for dark mode logo svg */
+html.dark svg .cls-1,
+html.dark svg .cls-2,
+html.dark svg .cls-3 {
+  stroke: #fff !important;
+}
+html.dark svg .cls-4 {
+  fill: #fff !important;
+}
+html.dark svg .cls-5 {
+  fill: #231f20 !important;
+}

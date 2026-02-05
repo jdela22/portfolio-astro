@@ -11,9 +11,16 @@ import Layout from "../layouts/Layout.astro";
 	<section class="flex flex-col gap-8 items-center text-sm">
 		<img class="rounded-full size-60 " src={profilePic.src}>
 		<div class="flex gap-3">
-			<Linkedin className="cursor-pointer" />
-			<Github className="cursor-pointer" />
-			<Mail className="cursor-pointer" />
+			<a href="https://www.linkedin.com/in/jareddelapasse/" target="_blank">
+				<Linkedin className="cursor-pointer" />
+			</a>
+
+			<a href="https://github.com/jdela22" target="_blank">
+				<Github className="cursor-pointer" />
+			</a>
+			<a href="mailto:jareddelapasse@gmail.com">
+				<Mail className="cursor-pointer" />
+			</a>
 		</div>
 		<article>
 			<p>

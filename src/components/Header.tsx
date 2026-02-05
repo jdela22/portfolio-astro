@@ -8,41 +8,63 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "./ModeToggle";
 import { SideMenu } from "./SideMenu";
+import logoRaw from "../assets/logo_final.svg?raw";
 
 export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
   props,
 ) => {
   return (
     <NavigationMenu
-      className="w-full justify-end md:pr-20 pr-5 sticky top-0 z-50 bg-[var(--background)] py-1"
+      className="w-full md:pr-20 pr-5 sticky top-0 z-50 bg-[var(--background)] py-1"
       {...props}
       viewport={false}
     >
-      <NavigationMenuList className="md:flex hidden">
-        <NavigationMenuItem>
-          <ModeToggle />
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <a href="/StuffIUse">Stuff I use</a>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <a href="/ThisSite">This Site</a>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <a href="/Reading">Reading</a>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        {/* <NavigationMenuItem> */}
-        {/*   <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}> */}
-        {/*     <a href="/docs">Docs</a> */}
-        {/*   </NavigationMenuLink> */}
-        {/* </NavigationMenuItem> */}
-      </NavigationMenuList>
+      <div className="justify-between items-center w-full md:flex hidden">
+        <NavigationMenuList className="flex">
+          <NavigationMenuItem className="pl-10 cursor-pointer">
+            <a href="/">
+              <div
+                dangerouslySetInnerHTML={{ __html: logoRaw }}
+                className="size-8 flex items-center justify-center"
+              />
+            </a>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+        <NavigationMenuList className="flex">
+          <NavigationMenuItem>
+            <ModeToggle />
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+            >
+              <a href="/StuffIUse">My dev workflow</a>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+            >
+              <a href="/ThisSite">This Site</a>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+            >
+              <a href="/Reading">Reading</a>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          {/* <NavigationMenuItem> */}
+          {/*   <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}> */}
+          {/*     <a href="/docs">Docs</a> */}
+          {/*   </NavigationMenuLink> */}
+          {/* </NavigationMenuItem> */}
+        </NavigationMenuList>
+      </div>
       <NavigationMenuList className="block md:hidden">
         <NavigationMenuItem>
           <SideMenu />
