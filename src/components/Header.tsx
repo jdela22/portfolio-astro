@@ -15,7 +15,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
 ) => {
   return (
     <NavigationMenu
-      className="w-full md:pr-20 pr-5 sticky top-0 z-50 bg-[var(--background)] py-1"
+      className="w-full md:pr-20 pr-5 sticky top-0 z-50 bg-[var(--background)] py-1 flex justify-end"
       {...props}
       viewport={false}
     >
@@ -65,11 +65,26 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
           {/* </NavigationMenuItem> */}
         </NavigationMenuList>
       </div>
-      <NavigationMenuList className="block md:hidden">
-        <NavigationMenuItem>
-          <SideMenu />
-        </NavigationMenuItem>
-      </NavigationMenuList>
+      <div className="flex justify-between w-full md:hidden">
+        <NavigationMenuList>
+          <NavigationMenuItem className="pl-10 cursor-pointer">
+            <a href="/">
+              <div
+                dangerouslySetInnerHTML={{ __html: logoRaw }}
+                className="size-8 flex items-center justify-center"
+              />
+            </a>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+        <NavigationMenuList className="flex gap-2">
+          <NavigationMenuItem>
+            <ModeToggle />
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <SideMenu />
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </div>
     </NavigationMenu>
   );
 };

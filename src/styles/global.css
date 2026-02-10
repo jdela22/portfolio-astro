@@ -124,11 +124,6 @@
 
 @theme {
   --font-mono: "Geist";
-  --font-mono: (--font-geist-mono);
-}
-
-html {
-  background-color: #ff00ff !important;
 }
 
 /* Needed for dark mode logo svg */
