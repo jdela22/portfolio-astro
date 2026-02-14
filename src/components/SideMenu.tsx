@@ -25,8 +25,15 @@ export const SideMenu: React.FC<React.ComponentProps<typeof Sheet>> = () => {
           <SheetDescription>Sheet Desc</SheetDescription>
         </SheetHeader>
         <div className="grid flex-1 auto-rows-min gap-6 px-4">
-          <div className="grid gap-3">something here</div>
-          <div className="grid gap-3">something else here</div>
+          <a href="/StuffIUse" className="grid gap-3">
+            My dev workflow
+          </a>
+          <a href="/ThisSite" className="grid gap-3">
+            This site
+          </a>
+          <a href="/Reading" className="grid gap-3">
+            Reading
+          </a>
         </div>
         <SheetFooter>
           Footer

@@ -67,7 +67,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
       </div>
       <div className="flex justify-between w-full md:hidden">
         <NavigationMenuList>
-          <NavigationMenuItem className="pl-10 cursor-pointer">
+          <NavigationMenuItem className="pl-5 cursor-pointer">
             <a href="/">
               <div
                 dangerouslySetInnerHTML={{ __html: logoRaw }}
