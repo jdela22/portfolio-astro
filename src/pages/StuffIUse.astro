@@ -1,32 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import neovim from "../assets/Neovim-logo.png";
+import neovim from "../assets/Neovim.png";
 import ghostty from "../assets/ghostty_logo.jpg";
 import opencode from "../assets/opencode-wordmark-dark.svg";
 import tmux from "../assets/Tmux_logo.png";
 ---
 
 <Layout>
-	<article class="flex flex-col items-center gap-4">
-		<h2 class="self-start">Terminal:</h2>
+	<article class="flex flex-col items-center gap-4 mt-20">
 		<p>
-			I tend to use the terminal for most of my development workflow. These are
-			some of the things I use on a daily basis in order to be as efficient as
-			possible.
+			Over the past few years my development workflow has shifted pretty heavily
+			to revolving around the terminal. I've found that the learning curve of
+			CLI tools (although admittedly steep) is often worth the experience you
+			get when interfacing directly with the tools you're using. GUIs are nice
+			when needing only surface level knowledge or when first getting started.
+			But as I've gotten more experienced, speed and flexibility are two
+			attributes I've come to value most in new tools. The CLI variations of
+			developer tools tend to prioritize those values.
 		</p>
-		<ul class="list-disc flex flex-col gap-6">
-			<img src={neovim.src} class="h-20 w-64 self-center">
+		<ul class="grid grid-cols-2 gap-6">
 			<li>
-				<a
-					href="#"
-					class="text-blue-400 underline cursor-pointer hover:text-blue-600"
+				<img
+					src={neovim.src}
+					class="size-40 self-center border border-slate-500 p-3 rounded cursor-pointer"
 				>
-					Neovim
-				</a>
-				has been my main editor for almost 2 years. It has an incredibly high
-				learning curve but once you've mastered vim motions and gained some
-				understanding of the underlying processes it is a fantastic development
-				experience.
+				<p>
+					<a
+						href="#"
+						class="text-blue-400 underline cursor-pointer hover:text-blue-600"
+					>
+						Neovim
+					</a>
+					has been my main editor for almost 2 years. It has an incredibly high
+					learning curve but once you've mastered vim motions and gained some
+					understanding of the underlying processes it is a fantastic
+					development experience.
+				</p>
 			</li>
 
 			<img src={tmux.src} class="h-20 w-64 self-center">

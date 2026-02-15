@@ -1,0 +1,16 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+	<article>
+		<section class="flex justify-center">
+			<a href="https://neovim.io/" target="_blank">
+				<img src={frontmatter.image} alt="image" class="h-20 w-96">
+			</a>
+		</section>
+		<h1>{frontmatter.title}</h1>
+		<p>{frontmatter.description}</p>
+	</article>
+</Layout>
