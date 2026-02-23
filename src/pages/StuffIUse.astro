@@ -1,50 +1,49 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import neovim from "../assets/Neovim.png";
-import ghostty from "../assets/ghostty_logo.jpg";
-import opencode from "../assets/opencode-wordmark-dark.svg";
-import tmux from "../assets/Tmux_logo.png";
+
+const posts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
 ---
+
+<script>
+const theme = document.documentElement.classList.contains("dark")
+	? "dark"
+	: "light";
+</script>
 
 <Layout>
 	<article class="flex flex-col items-center gap-4 mt-20">
 		<p>
 			Over the past few years my development workflow has shifted pretty heavily
-			to revolving around the terminal. I've found that the learning curve of
-			CLI tools (although admittedly steep) is often worth the experience you
+			towards revolving around the terminal. I've found that the learning curve
+			of CLI tools, while admittedly steep, is often worth the experience you
 			get when interfacing directly with the tools you're using. GUIs are nice
 			when needing only surface level knowledge or when first getting started.
 			But as I've gotten more experienced, speed and flexibility are two
 			attributes I've come to value most in new tools. The CLI variations of
 			developer tools tend to prioritize those values.
 		</p>
-		<ul class="grid grid-cols-2 gap-6">
-			<li>
-				<img
-					src={neovim.src}
-					class="size-40 self-center border border-slate-500 p-3 rounded cursor-pointer"
-				>
-				<p>
-					<a
-						href="#"
-						class="text-blue-400 underline cursor-pointer hover:text-blue-600"
-					>
-						Neovim
-					</a>
-					has been my main editor for almost 2 years. It has an incredibly high
-					learning curve but once you've mastered vim motions and gained some
-					understanding of the underlying processes it is a fantastic
-					development experience.
-				</p>
+
+		<ul class="grid grid-cols-3 gap-6 w-full">
+			{posts.map((post, index) => {
+			return  (
+			<li class={`flex flex-col gap-2 justify-center ${index % 3 === 0 ? "justify-self-start" : index % 3 === 1 ? "justify-self-center" : "justify-self-end"}`}>
+				<a href={ `/posts/${post.frontmatter.page}`}  >
+					 <img
+						src={post.frontmatter.thumbnail}
+						class={`w-48 h-60 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 dark:bg-linear-to-b from-black to-gray-800 bg-linear-to-b from-[var(--background)] to-gray-800 dark:hidden block shadow-sm shadow-amber-50`}
+					/> 
+					 <img
+						src={post.frontmatter.thumbnail_dark}
+						class={`w-48 h-60 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 dark:bg-linear-to-b from-black to-gray-800 bg-linear-to-b hidden dark:block`}
+					/>
+					
+				</a>
+				<span class="flex justify-center"><a href={ `/posts/${post.frontmatter.page}`}>
+					{post.frontmatter.description}
+				</a></span>
 			</li>
-
-			<img src={tmux.src} class="h-20 w-64 self-center">
-			<li>TMUX</li>
-
-			<img src={opencode.src} class="h-20 w-64 self-center">
-			<li>opencode</li>
-
-			<!-- <img src={ghostty.src} class="h-32 w-40 self-center"> -->
+			)}
+			)}
 		</ul>
 		Neovim Tmux Both of these tools require a fair amount of configuration. If
 		you're curious how I set mine up or you're looking for a jumping off point,

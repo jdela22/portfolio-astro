@@ -6,8 +6,17 @@ const { frontmatter } = Astro.props;
 <Layout>
 	<article>
 		<section class="flex justify-center">
-			<a href="https://neovim.io/" target="_blank">
-				<img src={frontmatter.image} alt="image" class="h-20 w-96">
+			<a href={frontmatter.info} target="_blank">
+				<img
+					src={frontmatter.heroImage}
+					alt="image"
+					class="h-24 w-96 dark:hidden block"
+				>
+				<img
+					src={frontmatter.heroImage_dark}
+					alt="image"
+					class="h-24 w-96 dark:block hidden"
+				>
 			</a>
 		</section>
 		<h1>{frontmatter.title}</h1>
