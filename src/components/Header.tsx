@@ -39,7 +39,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <a href="/StuffIUse">My dev workflow</a>
+              <a href="/StuffIUse">Stuff I use</a>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>

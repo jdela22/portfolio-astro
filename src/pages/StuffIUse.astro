@@ -4,39 +4,35 @@ import Layout from "../layouts/Layout.astro";
 const posts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
 ---
 
-<script>
-const theme = document.documentElement.classList.contains("dark")
-	? "dark"
-	: "light";
-</script>
-
 <Layout>
-	<article class="flex flex-col items-center gap-4 mt-20">
+	<h2 class="text-4xl my-10">Stuff I use</h2>
+	<article class="flex flex-col items-center gap-4">
 		<p>
 			Over the past few years my development workflow has shifted pretty heavily
 			towards revolving around the terminal. I've found that the learning curve
-			of CLI tools, while admittedly steep, is often worth the experience you
-			get when interfacing directly with the tools you're using. GUIs are nice
-			when needing only surface level knowledge or when first getting started.
-			But as I've gotten more experienced, speed and flexibility are two
-			attributes I've come to value most in new tools. The CLI variations of
-			developer tools tend to prioritize those values.
+			of CLI tools, while admittedly steep, is often worth the experience. As
+			I've gotten more experienced, speed and flexibility are two attributes
+			I've come to value most in new tools. The CLI variations of developer
+			tools tend to prioritize those values.
 		</p>
-
-		<ul class="grid grid-cols-3 gap-6 w-full">
+		<p>
+			These are a few of the tools that have become a staple in my day to day.
+			I've written a brief explanation on what they are and how I use them.
+		</p>
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
 			{posts.map((post, index) => {
 			return  (
-			<li class={`flex flex-col gap-2 justify-center ${index % 3 === 0 ? "justify-self-start" : index % 3 === 1 ? "justify-self-center" : "justify-self-end"}`}>
+			<li class={`flex flex-col gap-2 justify-center justify-self-center ${index % 3 === 0 ? "lg:justify-self-start" : index % 3 === 1 ? "lg:justify-self-center" : "lg:justify-self-end"}`}>
 				<a href={ `/posts/${post.frontmatter.page}`}  >
-					 <img
+					<img
 						src={post.frontmatter.thumbnail}
-						class={`w-48 h-60 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 dark:bg-linear-to-b from-black to-gray-800 bg-linear-to-b from-[var(--background)] to-gray-800 dark:hidden block shadow-sm shadow-amber-50`}
+						class={`lg:size-44 sm:48 size-52 self-center border border-gray-400 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2  dark:hidden block `}
 					/> 
-					 <img
+					<img
 						src={post.frontmatter.thumbnail_dark}
-						class={`w-48 h-60 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 dark:bg-linear-to-b from-black to-gray-800 bg-linear-to-b hidden dark:block`}
+						class={`size-40 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 from-black to-gray-800 bg-linear-to-b hidden dark:block`}
 					/>
-					
+
 				</a>
 				<span class="flex justify-center"><a href={ `/posts/${post.frontmatter.page}`}>
 					{post.frontmatter.description}
@@ -45,9 +41,17 @@ const theme = document.documentElement.classList.contains("dark")
 			)}
 			)}
 		</ul>
-		Neovim Tmux Both of these tools require a fair amount of configuration. If
-		you're curious how I set mine up or you're looking for a jumping off point,
-		you can take a look at my dotfiles. I keep them pretty up-to-date for my own
-		use when setting up new machines. LINK TO DOTFILES
+		<p>
+			These tools require a fair amount of configuration. If you're curious how
+			I set mine up or you're looking for a jumping off point, you can take a
+			look at my
+			<a
+				href="https://github.com/jdela22/dotfiles"
+				target="_blank"
+				class="underline text-blue-400"
+				>dotfiles</a
+			>. I keep them pretty up-to-date for my own use when setting up new
+			machines.
+		</p>
 	</article>
 </Layout>

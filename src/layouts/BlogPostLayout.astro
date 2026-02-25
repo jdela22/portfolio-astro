@@ -7,16 +7,30 @@ const { frontmatter } = Astro.props;
 	<article>
 		<section class="flex justify-center">
 			<a href={frontmatter.info} target="_blank">
-				<img
-					src={frontmatter.heroImage}
-					alt="image"
-					class="h-24 w-96 dark:hidden block"
-				>
-				<img
-					src={frontmatter.heroImage_dark}
-					alt="image"
-					class="h-24 w-96 dark:block hidden"
-				>
+				<div class="dark:hidden">
+					<img
+						src={frontmatter.heroImage}
+						alt="image"
+						class="hidden sm:block h-28 w-96"
+					>
+					<img
+						src={frontmatter.thumbnail}
+						alt="image"
+						class="block sm:hidden h-28 w-96"
+					>
+				</div>
+				<div class="hidden dark:block">
+					<img
+						src={frontmatter.heroImage_dark}
+						alt="image"
+						class="hidden sm:block h-28 w-96"
+					>
+					<img
+						src={frontmatter.thumbnail_dark}
+						alt="image"
+						class="block sm:hidden h-28 w-96"
+					>
+				</div>
 			</a>
 		</section>
 		<h1>{frontmatter.title}</h1>

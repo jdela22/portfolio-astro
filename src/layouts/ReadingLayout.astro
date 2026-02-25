@@ -1,0 +1,17 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+	<article class="flex flex-col gap-3">
+		<section class="flex justify-center">
+			<a href={frontmatter.info} target="_blank">
+				<img src={frontmatter.heroImage} alt="image" class="w-60 h-72">
+			</a>
+		</section>
+		<h1>{frontmatter.title}</h1>
+		<p class="flex justify-center">{frontmatter.description}</p>
+		<slot />
+	</article>
+</Layout>

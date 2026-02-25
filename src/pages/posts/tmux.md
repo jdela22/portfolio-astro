@@ -4,7 +4,7 @@ page: tmux
 description: Tmux
 thumbnail: ../src/assets/tmux_thumbnail.svg
 thumbnail_dark: ../src/assets/tmux_thumbnail.svg
-heroImage: ../src/assets/tmux_logo.svg
+heroImage: ../src/assets/tmux_logo.png
 heroImage_dark: ../src/assets/tmux_logo.png
 info: https://github.com/tmux/tmux/wiki
 ---
