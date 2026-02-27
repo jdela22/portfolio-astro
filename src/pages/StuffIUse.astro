@@ -26,11 +26,11 @@ const posts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
 				<a href={ `/posts/${post.frontmatter.page}`}  >
 					<img
 						src={post.frontmatter.thumbnail}
-						class={`lg:size-44 sm:48 size-52 self-center border border-gray-400 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2  dark:hidden block `}
+						class={`lg:size-44 sm:size-48 size-52 self-center border border-gray-400 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2  dark:hidden block `}
 					/> 
 					<img
 						src={post.frontmatter.thumbnail_dark}
-						class={`size-40 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 from-black to-gray-800 bg-linear-to-b hidden dark:block`}
+						class={`lg:size-44 sm:size-48 size-52 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 from-black to-gray-800 bg-linear-to-b hidden dark:block`}
 					/>
 
 				</a>

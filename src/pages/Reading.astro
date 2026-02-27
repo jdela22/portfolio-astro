@@ -14,7 +14,7 @@ const books = Object.values(
 	<article class="flex flex-col gap-8 items-center">
 		<h1 class="text-3xl self-start">Finished</h1>
 		<ul class="grid gap-6 w-full">
-			{books.filter(book => book.frontmatter.status === 'read').map((book, index) => {
+			{books.filter(book => book.frontmatter.status === 'read').map((book) => {
 			return  (
 			<li class={`flex flex-col gap-2 justify-self-center`}>
 				<a href={ `/reading/${book.frontmatter.page}`}  >
@@ -32,9 +32,9 @@ const books = Object.values(
 		</ul>
 		<h1 class="text-3xl self-start">In progress</h1>
 		<ul class="grid gap-6 w-full">
-			{books.filter(book => book.frontmatter.status === 'in-progress').map((book, index) => {
+			{books.filter(book => book.frontmatter.status === 'in-progress').map((book) => {
 			return  (
-			<li class={`flex flex-col gap-2 justify-center justify-self-center ${index % 3 === 0 ? "lg:justify-self-start" : index % 3 === 1 ? "lg:justify-self-center" : "lg:justify-self-end"} `}>
+			<li class={`flex flex-col gap-2 justify-self-center`}>
 				<a href={ `/reading/${book.frontmatter.page}`}  >
 					<img
 						src={book.frontmatter.thumbnail}
@@ -50,9 +50,9 @@ const books = Object.values(
 		</ul>
 		<h1 class="text-3xl self-start">Up next</h1>
 		<ul class="grid gap-6 w-full">
-			{books.filter(book => book.frontmatter.status === 'unread').map((book, index) => {
+			{books.filter(book => book.frontmatter.status === 'unread').map((book) => {
 			return  (
-			<li class={`flex flex-col gap-2 justify-center justify-self-center ${index % 3 === 0 ? "lg:justify-self-start" : index % 3 === 1 ? "lg:justify-self-center" : "lg:justify-self-end"} `}>
+			<li class={`flex flex-col gap-2 justify-self-center`}>
 				<a href={ `/reading/${book.frontmatter.page}`}  >
 					<img
 						src={book.frontmatter.thumbnail}
