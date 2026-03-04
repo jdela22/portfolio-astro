@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import type { MarkdownInstance } from "astro";
+import { Reading  }from "../components/Reading";
+
+interface Post {
+	page: string;
+	description: string;
+	thumbnail: string;
+	thumbnail_dark: string;
+	heroImage: string;
+	heroImage_dark: string;
+	info: string;
+}
+const posts = Object.values(
+	import.meta.glob<MarkdownInstance<Post>>("./posts/*.md", { eager: true }),
+);
+---
+
+<Layout>
+
+<Reading />
+
+</Layout>

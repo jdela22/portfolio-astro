@@ -1,6 +1,6 @@
 ---
-import type { MarkdownInstance } from "astro";
 import Layout from "../layouts/Layout.astro";
+import type { MarkdownInstance } from "astro";
 
 interface Post {
 	page: string;
@@ -37,12 +37,79 @@ const posts = Object.values(
 			<li class={`flex flex-col gap-2 justify-center justify-self-center ${index % 3 === 0 ? "lg:justify-self-start" : index % 3 === 1 ? "lg:justify-self-center" : "lg:justify-self-end"}`}>
 				<a href={ `/posts/${post.frontmatter.page}`}  >
 					<img
-						alt="thumbnail"
 						src={post.frontmatter.thumbnail}
 						class={`lg:size-44 sm:size-48 size-52 self-center border border-gray-400 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2  dark:hidden block `}
 					/> 
 					<img
-						alt="thumbnail_dark"
+						src={post.frontmatter.thumbnail_dark}
+						class={`lg:size-44 sm:size-48 size-52 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 from-black to-gray-800 bg-linear-to-b hidden dark:block`}
+					/>
+
+				</a>
+				<span class="flex justify-center"><a href={ `/posts/${post.frontmatter.page}`}>
+					{post.frontmatter.description}
+				</a></span>
+			</li>
+			)}
+			)}
+		</ul>
+		<p>
+			These tools require a fair amount of configuration. If you're curious how
+			I set mine up or you're looking for a jumping off point, you can take a
+			look at my
+			<a
+				href="https://github.com/jdela22/dotfiles"
+				target="_blank"
+				class="underline text-blue-400"
+				>dotfiles</a
+			>. I keep them pretty up-to-date for my own use when setting up new
+			machines.
+		</p>
+	</article>
+</Layout>
+---
+import Layout from "../layouts/Layout.astro";
+import type { MarkdownInstance } from "astro";
+
+interface Post {
+	page: string;
+	description: string;
+	thumbnail: string;
+	thumbnail_dark: string;
+	heroImage: string;
+	heroImage_dark: string;
+	info: string;
+}
+const posts = Object.values(
+	import.meta.glob<MarkdownInstance<Post>>("./posts/*.md", { eager: true }),
+);
+---
+
+<Layout>
+	<h2 class="text-4xl my-10">Stuff I use</h2>
+	<article class="flex flex-col items-center gap-4">
+		<p>
+			Over the past few years my development workflow has shifted pretty heavily
+			towards revolving around the terminal. I've found that the learning curve
+			of CLI tools, while admittedly steep, is often worth the experience. As
+			I've gotten more experienced, speed and flexibility are two attributes
+			I've come to value most in new tools. The CLI variations of developer
+			tools tend to prioritize those values.
+		</p>
+		<p>
+			These are a few of the tools that have become a staple in my day to day.
+			I've written a brief explanation on what they are and how I use them.
+		</p>
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+			{posts.map((post, index) => {
+			return  (
+			<li class={`flex flex-col gap-2 justify-center justify-self-center ${index % 3 === 0 ? "lg:justify-self-start" : index % 3 === 1 ? "lg:justify-self-center" : "lg:justify-self-end"}`}>
+				<a href={ `/posts/${post.frontmatter.page}`}  >
+					<img
+						src={post.frontmatter.thumbnail}
+						class={`lg:size-44 sm:size-48 size-52 self-center border border-gray-400 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2  dark:hidden block `}
+					/> 
+					<img
 						src={post.frontmatter.thumbnail_dark}
 						class={`lg:size-44 sm:size-48 size-52 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 from-black to-gray-800 bg-linear-to-b hidden dark:block`}
 					/>
