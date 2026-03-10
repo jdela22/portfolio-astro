@@ -7,7 +7,8 @@
       }
 
       .cls-1, .cls-2, .cls-3, .cls-4 {
-        stroke: #231f20;
+        /* stroke: #231f20; */
+        stroke: var(--background)
         stroke-linecap: round;
       }
 
@@ -16,7 +17,8 @@
       }
 
       .cls-5, .cls-3 {
-        fill: #231f20;
+        /* fill: #231f20; */
+        fill: var(--background)
       }
 
       .cls-6 {

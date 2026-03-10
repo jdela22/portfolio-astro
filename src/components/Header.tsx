@@ -47,7 +47,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
 							asChild
 							className={navigationMenuTriggerStyle()}
 						>
-							<a href="/ThisSite">This Site</a>
+							<a href="/Reading">Reading</a>
 						</NavigationMenuLink>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
@@ -55,7 +55,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
 							asChild
 							className={navigationMenuTriggerStyle()}
 						>
-							<a href="/Reading">Reading</a>
+							<a href="/ThisSite">This Site</a>
 						</NavigationMenuLink>
 					</NavigationMenuItem>
 					{/* <NavigationMenuItem> */}

@@ -17,7 +17,7 @@
       }
 
       .cls-5 {
-        fill: #fff;
+        fill: var(--background)
       }
 
       .cls-2, .cls-3 {

@@ -8,7 +8,8 @@
 
       .cls-1, .cls-2, .cls-3 {
         fill: none;
-        stroke: #231f20;
+        /* stroke: #231f20; */
+        stroke: var(--background)
       }
 
       .cls-1, .cls-2, .cls-3, .cls-4 {
@@ -16,11 +17,13 @@
       }
 
       .cls-5 {
-        fill: #231f20;
+        /* fill: #231f20; */
+        fill: var(--background);
       }
 
       .cls-6, .cls-4 {
-        fill: #fff;
+        /* fill: #fff; */
+        fill: var(--background)
       }
 
       .cls-2, .cls-3, .cls-4 {

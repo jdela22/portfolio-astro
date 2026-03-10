@@ -7,18 +7,28 @@ const { frontmatter } = Astro.props;
 <style is:global>
 @reference "../styles/global.css";
 
-p {
-	margin-top: 15px;
-}
+.markdown-body {
+	p {
+		margin-top: 15px;
+	}
 
-li {
-	display: block;
-	margin-top: 5px;
+	li {
+		margin-top: 5px;
+		list-style-type: disc;
+	}
+
+	ul {
+		list-style: decimal inside;
+	}
+
+	a {
+		@apply underline underline-offset-2 hover:text-accent decoration-accent outline-orange-500;
+	}
 }
 </style>
 
 <Layout>
-	<article class="prose">
+	<article>
 		<section class="flex justify-center">
 			<a href={frontmatter.info} target="_blank">
 				<div class="dark:hidden">
@@ -49,6 +59,6 @@ li {
 		</section>
 		<!-- <h1>{frontmatter.title}</h1> -->
 		<!-- <p>{frontmatter.description}</p> -->
-		<slot class="text-sm [p>mt-2]" />
+		<section class="markdown-body"><slot /></section>
 	</article>
 </Layout>

@@ -1,16 +1,79 @@
 ---
+import Astro_dark from "../assets/astro_dark.svg";
+import Astro_light from "../assets/astro_light.svg";
+import Bun from "../assets/Bun.svg";
+import Biome from "../assets/biome_logo.svg";
+import Shadcn from "../assets/shadcn-ui.svg";
+import Tailwind_thumbnail from "../assets/tailwind_thumbnail.svg";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
 	<article>
-		<div>This site was made using the astro framework</div>
-		<ul>
-			<li>Bun</li>
-			<li>Biome</li>
-			<li>Astro</li>
-			<li>React (UI Components)</li>
-			<li>Tailwind</li>
+		<h1 class="text-3xl self-start mb-10">This site was made with</h1>
+		<!-- <div>This site was created using the astro framework</div> -->
+		<ul class="*:gap-4 items-center">
+			<li>
+				<a
+					class="hidden dark:flex gap-4"
+					href="https://astro.build/"
+					target="_blank"
+				>
+					<img src={Astro_dark.src} alt="astro dark" class="size-20">
+					<span class="flex items-center">Astro</span>
+				</a>
+			</li>
+			<li>
+				<a
+					class="dark:hidden flex gap-4"
+					href="https://astro.build/"
+					target="_blank"
+				>
+					<img src={Astro_light.src} alt="astro light" class="size-20">
+					<span class="flex items-center">Astro</span>
+				</a>
+			</li>
+
+			<li>
+				<a class="flex gap-4" href="https://bun.com/" target="_blank">
+					<img src={Bun.src} alt="bun" class="rounded size-20">
+					<span class="items-center flex">Bun</span>
+				</a>
+			</li>
+			<li>
+				<a
+					class="flex gap-4 fill-white color-white"
+					href="https://ui.shadcn.com/"
+					target="_blank"
+				>
+					<img
+						src={Shadcn.src}
+						alt="shadcn"
+						class="rounded size-20 dark:brightness-0 dark:invert"
+					>
+					<span class="items-center flex">shadcn</span>
+				</a>
+			</li>
+			<li>
+				<a
+					class="flex gap-4 dark:fill-background"
+					href="https://biomejs.dev/"
+					target="_blank"
+				>
+					<img
+						src={Biome.src}
+						alt="biome"
+						class="rounded size-20 dark:brightness-0 dark:invert"
+					>
+					<span class="items-center flex">Biome</span>
+				</a>
+			</li>
+			<li>
+				<a class="flex gap-4" href="https://tailwindcss.com/" target="_blank">
+					<img src={Tailwind_thumbnail.src} alt="tw" class="size-20">
+					<span class="items-center flex">Tailwind</span>
+				</a>
+			</li>
 		</ul>
 	</article>
 </Layout>
