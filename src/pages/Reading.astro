@@ -1,13 +1,25 @@
 ---
+import type { MarkdownInstance } from "astro";
 import Layout from "../layouts/Layout.astro";
 
+interface Book {
+	status: string;
+	page: string;
+	description: string;
+	thumbnail: string;
+	thumbnail_dark: string;
+	heroImage: string;
+	heroImage_dark: string;
+	info: string;
+}
+
 const books = Object.values(
-	import.meta.glob("./reading/*.md", { eager: true }),
+	import.meta.glob<MarkdownInstance<Book>>("./reading/*.md", { eager: true }),
 );
 ---
 
 <style is:global>
-@reference "../styles/global.css"
+@reference "../styles/global.css";
 </style>
 
 <Layout>
@@ -19,11 +31,12 @@ const books = Object.values(
 			<li class={`flex flex-col gap-2 justify-self-center`}>
 				<a href={ `/reading/${book.frontmatter.page}`}  >
 					<img
+						alt="read"
 						src={book.frontmatter.thumbnail}
-						class={` w-60 h-72 self-center rounded-lg cursor-pointer transition hover:-translate-y-2 shadow-sm shadow-gray-400`}
+						class={` w-60 h-72 self-center rounded-lg cursor-pointer transition hover:-translate-y-2 shadow-sm shadow-gray-400 dark:shadow-none`}
 					/> 
 				</a>
-				<span class="flex justify-center"><a href={ `/posts/${book.frontmatter.page}`}>
+				<span class="flex justify-center"><a href={ `/reading/${book.frontmatter.page}`}>
 					{book.frontmatter.description}
 				</a></span>
 			</li>
@@ -37,11 +50,12 @@ const books = Object.values(
 			<li class={`flex flex-col gap-2 justify-self-center`}>
 				<a href={ `/reading/${book.frontmatter.page}`}  >
 					<img
+						alt='in-progress'
 						src={book.frontmatter.thumbnail}
-						class={` w-60 h-72 self-center rounded-lg cursor-pointer transition hover:-translate-y-2 shadow-sm shadow-gray-400`}
+						class={` w-60 h-72 self-center rounded-lg cursor-pointer transition hover:-translate-y-2 shadow-sm shadow-gray-400 dark:shadow-none`}
 					/> 
 				</a>
-				<span class="flex justify-center"><a href={ `/posts/${book.frontmatter.page}`}>
+				<span class="flex justify-center"><a href={ `/reading/${book.frontmatter.page}`}>
 					{book.frontmatter.description}
 				</a></span>
 			</li>
@@ -55,13 +69,15 @@ const books = Object.values(
 			<li class={`flex flex-col gap-2 justify-self-center`}>
 				<a href={ `/reading/${book.frontmatter.page}`}  >
 					<img
+						alt='completed'
 						src={book.frontmatter.thumbnail}
-						class={` w-60 h-72 self-center rounded-lg cursor-pointer transition hover:-translate-y-2 shadow-sm shadow-gray-400`}
+						class={` w-60 h-72 self-center rounded-lg cursor-pointer transition hover:-translate-y-2 shadow-sm shadow-gray-400 dark:shadow-none`}
 					/> 
 				</a>
-				<span class="flex justify-center"><a href={ `/posts/${book.frontmatter.page}`}>
+				<span class="flex justify-center">
+					<a href={ `/reading/${book.frontmatter.page}`}>
 					{book.frontmatter.description}
-				</a></span>
+		</a></span>
 			</li>
 			)}
 			)}

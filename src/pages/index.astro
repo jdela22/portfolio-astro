@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
 	<section class="flex flex-col gap-8 items-center text-sm">
-		<img class="rounded-full size-60 " src={profilePic.src}>
+		<img class="rounded-full size-60 " src={profilePic.src} alt="profile">
 		<div class="flex gap-3">
 			<a href="https://www.linkedin.com/in/jareddelapasse/" target="_blank">
 				<Linkedin className="cursor-pointer" />
@@ -23,20 +23,12 @@ import Layout from "../layouts/Layout.astro";
 			</a>
 		</div>
 		<article class="flex flex-col gap-4">
+			<p>Hi! I'm Jared Delapasse.</p>
 			<p>
-				Hi! I'm Jared Delapasse. I built this site to learn a bit about the
-				astro framework and to act as a quasi-blog for the latest things I am
-				interested in or any books I may be reading.
+				I'm a software engineer with a focus on frontend. This is a site I made
+				to act as a quasi blog to talk about various topics I'm interested and
+				tools I'm using.
 			</p>
-			<p>
-				Software development is changing at a rapid pace. I, like many others,
-				have been doing my best to wrap my head around the implications of the
-				more recent developments of LLMs and the tools around them. This site is
-				meant to act as a place to organize my thoughts on those developments,
-				as well as document my growth and expansion of knowledge on various
-				topics outside of work.
-			</p>
-			<!-- <p>In my free time I try to learn skills and concepts I don't come across at work. Currently, I'm wrapping up an exellent series by Thorsten Ball about Interpreters and compilers.</p> -->
 		</article>
 	</section>
 </Layout>
