@@ -2,16 +2,16 @@
 layout: ../../layouts/BlogPostLayout.astro
 page: tmux
 description: Tmux
-thumbnail: ../src/assets/tmux_thumbnail.svg
-thumbnail_dark: ../src/assets/tmux_thumbnail.svg
-heroImage: ../src/assets/tmux_logo.png
-heroImage_dark: ../src/assets/tmux_logo.png
+thumbnail: /tmux_thumbnail.svg
+thumbnail_dark: /tmux_thumbnail.svg
+heroImage: /tmux_logo.png
+heroImage_dark: /tmux_logo.png
 info: https://github.com/tmux/tmux/wiki
 ---
 
 Tmux allows you to manage multiple terminal sessions, windows, and panes in a single window. It's what let's me use the other tools in this section all together.
 
-![tmux demo](../../assets/tmux_demo.gif)
+![tmux demo](/tmux_demo.gif)
 
 Basically, Tmux makes it easy to manage multiple terminal processes, so you don't have to quit neovim and restart your dev server everytime you make an edit. Sessions are also helpful for when you are working on multiple projects at once, akin to having multiple VsCode windows but much more ergonomic.
 

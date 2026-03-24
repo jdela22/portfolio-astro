@@ -2,10 +2,10 @@
 layout: ../../layouts/ReadingLayout.astro
 page: compiler
 description: Writing an Compiler in Go
-thumbnail: ../src/assets/compiler-cover.jpg
-thumbnail_dark: ../src/assets/compiler-cover.jpg
-heroImage: ../src/assets/compiler-cover.jpg
-heroImage_dark: ../src/assets/compiler-cover.jpg
+thumbnail: /compiler-cover.jpg
+thumbnail_dark: /compiler-cover.jpg
+heroImage: /compiler-cover.jpg
+heroImage_dark: /compiler-cover.jpg
 info: https://compilerbook.com/
 status: in-progress
 ---

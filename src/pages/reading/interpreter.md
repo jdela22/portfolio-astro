@@ -2,10 +2,10 @@
 layout: ../../layouts/ReadingLayout.astro
 page: interpreter
 description: Writing an Interpreter in Go
-thumbnail: ../src/assets/interpreter-cover.jpg
-thumbnail_dark: ../src/assets/interpreter-cover.jpg
-heroImage: ../src/assets/interpreter-cover.jpg
-heroImage_dark: ../src/assets/interpreter-cover.jpg
+thumbnail: /interpreter-cover.jpg
+thumbnail_dark: /interpreter-cover.jpg
+heroImage: /interpreter-cover.jpg
+heroImage_dark: /interpreter-cover.jpg
 info: https://interpreterbook.com/
 status: read
 ---

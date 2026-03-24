@@ -2,17 +2,17 @@
 layout: ../../layouts/BlogPostLayout.astro
 page: neovim
 description: Neovim
-thumbnail: ../src/assets/neovim_thumbnail.svg
-thumbnail_dark: ../src/assets/neovim_thumbnail.svg
-heroImage: ../src/assets/neovim_logo.png
-heroImage_dark: ../src/assets/neovim_logo.png
+thumbnail: /neovim_thumbnail.svg
+thumbnail_dark: /neovim_thumbnail.svg
+heroImage: /neovim_logo.png
+heroImage_dark: /neovim_logo.png
 info: https://neovim.io/
 ---
 
 
 Neovim has been my main text-editor for almost 2 years. It's had a fairly profound impact on my view of development environments and the way I think about software development in general.
 
-![neovim-screenshot.png](../../assets/neovim-screenshot.png)
+![neovim-screenshot.png](/neovim-screenshot.png)
 
 Before being exposed to Neovim, I had never put a significant amount of thought into my tooling. I had always maintained surface level knowledge of my environment and leaned on GUI's to abstract the underlying processes away.
 
@@ -20,7 +20,7 @@ Before being exposed to Neovim, I had never put a significant amount of thought 
 
  Before you know it you're learning a new language to manage a process that you previously didn't even know existed. It's a bit addicting.
 
-![neovim-screenshot-2.png](../../assets/neovim-screenshot-2.png)
+![neovim-screenshot-2.png](/neovim-screenshot-2.png)
 
 By far the biggest advantage of this switch that I've experienced is [vim motions](https://vim.rtorr.com/). The advantage (speed, efficiency) of mouse-free programming is something that I'm extremely happy I put the time in to learn. AI-Powered editors like Cursor are more popular these days, and I'm not sure if Neovim will keep up in terms of productivity. However vim motions are usually baked into other editors (VsCode plugin, JetBrains toggles). So even if Neovim is no longer my main driver, I'll be taking the motions with me anywhere I go.
 

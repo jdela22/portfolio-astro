@@ -2,10 +2,10 @@
 layout: ../../layouts/ReadingLayout.astro
 page: ddia
 description: D.D.I.A.
-thumbnail: ../src/assets/ddia-cover.jpeg
-thumbnail_dark: ../src/assets/ddia-cover.jpeg
-heroImage: ../src/assets/ddia-cover.jpeg
-heroImage_dark: ../src/assets/ddia-cover.jpeg
+thumbnail: /ddia-cover.jpeg
+thumbnail_dark: /ddia-cover.jpeg
+heroImage: /ddia-cover.jpeg
+heroImage_dark: /ddia-cover.jpeg
 info: https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/
 status: unread
 ---
