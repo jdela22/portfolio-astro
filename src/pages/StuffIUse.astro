@@ -22,14 +22,12 @@ const posts = Object.values(
 		<p>
 			Over the past few years my development workflow has shifted pretty heavily
 			towards revolving around the terminal. I've found that the learning curve
-			of CLI tools, while admittedly steep, is often worth the experience. As
-			I've gotten more experienced, speed and flexibility are two attributes
-			I've come to value most in new tools. The CLI variations of developer
-			tools tend to prioritize those values.
+			of CLI tools, while admittedly steep, is often worth the experience. Speed
+			and flexibility are two attributes I've come to value most in tools, and
+			the CLI variations of developer tools tend to prioritize those values.
 		</p>
-		<p>
-			These are a few of the tools that have become a staple in my day to day.
-			I've written a brief explanation on what they are and how I use them.
+		<p class="w-full">
+			These are a few of the tools that have become a staple in my day to day. <!-- I've written a brief explanation on what they are and how I use them. -->
 		</p>
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
 			{posts.map((post, index) => {
@@ -44,7 +42,7 @@ const posts = Object.values(
 					<img
 						alt="thumbnail_dark"
 						src={post.frontmatter.thumbnail_dark}
-						class={`lg:size-44 sm:size-48 size-52 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 from-black to-gray-800 bg-linear-to-b hidden dark:block`}
+						class={`lg:size-44 sm:size-48 size-52 self-center border border-slate-500 p-12 rounded-lg cursor-pointer transition hover:-translate-y-2 hidden dark:block`}
 					/>
 
 				</a>

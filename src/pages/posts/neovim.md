@@ -16,7 +16,7 @@ Neovim has been my main text-editor for almost 2 years. It's had a fairly profou
 
 Before being exposed to Neovim, I had never put a significant amount of thought into my tooling. I had always maintained surface level knowledge of my environment and leaned on GUI's to abstract the underlying processes away.
 
- While configuring Neovim you'll encounter issues and problems that hadn't previously entered your consciousness in a traditional IDE. Neovim's intentionally minimal out-of-the-box configuration encourages you to explore the extensive [plugin ecosystem](https://dotfyle.com/neovim/plugins/trending) and to set up a development that is tailored to them creating what people refer to as a PDE (Personal Development Environment)
+ While configuring Neovim you'll encounter issues and problems that hadn't previously entered your consciousness in a traditional IDE. Neovim's intentionally minimal out-of-the-box configuration encourages you to explore the extensive [plugin ecosystem](https://dotfyle.com/neovim/plugins/trending) and to set up a development that is tailored to you creating what people refer to as a PDE (Personal Development Environment)
 
  Before you know it you're learning a new language to manage a process that you previously didn't even know existed. It's a bit addicting.
 
