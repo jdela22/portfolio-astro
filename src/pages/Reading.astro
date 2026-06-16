@@ -1,11 +1,16 @@
 ---
 import type { MarkdownInstance } from "astro";
+import LineItem from "../components/LineItem.astro";
+import PageHeading from "../components/PageHeading.astro";
+import ContentSection from "../components/ContentSection.astro";
+import ReadingHeader from "../components/ReadingHeader.astro";
 import Layout from "../layouts/Layout.astro";
 
 interface Book {
 	status: string;
 	page: string;
 	description: string;
+	title: string;
 	thumbnail: string;
 	thumbnail_dark: string;
 	heroImage: string;
@@ -23,65 +28,37 @@ const books = Object.values(
 </style>
 
 <Layout>
-	<article class="flex flex-col gap-8 items-center">
-		<h1 class="text-3xl self-start">Finished</h1>
-		<ul class="grid gap-6 w-full">
-			{books.filter(book => book.frontmatter.status === 'read').map((book) => {
-			return  (
-			<li class={`flex flex-col gap-2 justify-self-center`}>
-				<a href={ `/reading/${book.frontmatter.page}`}  >
-					<img
-						alt="read"
-						src={book.frontmatter.thumbnail}
-						class={` w-60 h-72 self-center rounded-lg cursor-pointer transition hover:-translate-y-2 shadow-sm shadow-gray-400 dark:shadow-none`}
-					/> 
-				</a>
-				<span class="flex justify-center"><a href={ `/reading/${book.frontmatter.page}`}>
-					{book.frontmatter.description}
-				</a></span>
-			</li>
-			)}
-			)}
+	<PageHeading>Reading</PageHeading>
+	<ContentSection>
+		<p>
+			While I believe practical experience is the best for making concepts
+			stick, I've found that programming books can be very valuable for exposing
+			you to new concepts. I've shared a few below that I've found very
+			enjoyable, and listed some that I plan to read in the near-future.
+		</p>
+		<ReadingHeader>Completed</ReadingHeader>
+		<ul class="w-full flex flex-col gap-2 cursor-pointer">
+			{books.filter(book => book.frontmatter.status === "read").map((book) => {
+				return (
+				<LineItem title={book.frontmatter.title} description={book.frontmatter.description} page={book.frontmatter.page} prefix="reading" />
+			)
+			})}
 		</ul>
-		<h1 class="text-3xl self-start">In progress</h1>
-		<ul class="grid gap-6 w-full">
-			{books.filter(book => book.frontmatter.status === 'in-progress').map((book) => {
-			return  (
-			<li class={`flex flex-col gap-2 justify-self-center`}>
-				<a href={ `/reading/${book.frontmatter.page}`}  >
-					<img
-						alt='in-progress'
-						src={book.frontmatter.thumbnail}
-						class={` w-60 h-72 self-center rounded-lg cursor-pointer transition hover:-translate-y-2 shadow-sm shadow-gray-400 dark:shadow-none`}
-					/> 
-				</a>
-				<span class="flex justify-center"><a href={ `/reading/${book.frontmatter.page}`}>
-					{book.frontmatter.description}
-				</a></span>
-			</li>
-			)}
-			)}
+		<ReadingHeader>In Progress</ReadingHeader>
+		<ul class="w-full flex flex-col gap-2 cursor-pointer">
+			{books.filter(book => book.frontmatter.status === "in-progress").map((book) => {
+				return (
+				<LineItem title={book.frontmatter.title} description={book.frontmatter.description} page={book.frontmatter.page} prefix="reading" />
+			)
+			})}
 		</ul>
-		<h1 class="text-3xl self-start">Up next</h1>
-		<ul class="grid gap-6 w-full">
-			{books.filter(book => book.frontmatter.status === 'unread').map((book) => {
-			return  (
-			<li class={`flex flex-col gap-2 justify-self-center`}>
-				<a href={ `/reading/${book.frontmatter.page}`}  >
-					<img
-						alt='completed'
-						src={book.frontmatter.thumbnail}
-						class={` w-60 h-72 self-center rounded-lg cursor-pointer transition hover:-translate-y-2 shadow-sm shadow-gray-400 dark:shadow-none`}
-					/> 
-				</a>
-				<span class="flex justify-center">
-					<a href={ `/reading/${book.frontmatter.page}`}>
-					{book.frontmatter.description}
-		</a></span>
-			</li>
-			)}
-			)}
+		<ReadingHeader>Up Next</ReadingHeader>
+		<ul class="w-full flex flex-col gap-2 cursor-pointer">
+			{books.filter(book => book.frontmatter.status === "unread").map((book) => {
+				return (
+				<LineItem title={book.frontmatter.title} description={book.frontmatter.description} page={book.frontmatter.page} prefix="reading" />
+			)
+			})}
 		</ul>
-		<slot />
-	</article>
+	</ContentSection>
 </Layout>

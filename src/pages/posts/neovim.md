@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 page: neovim
-description: Neovim
+title: Neovim
+description: Terminal text editor
 thumbnail: /neovim_thumbnail.svg
 thumbnail_dark: /neovim_thumbnail.svg
 heroImage: /neovim_logo.png

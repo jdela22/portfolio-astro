@@ -1,0 +1,13 @@
+---
+interface Props {
+	gap?: number;
+	as?: "article" | "section";
+	class?: string;
+}
+
+const { gap = 8, as: Tag = "article", class: className = "" } = Astro.props;
+---
+
+<Tag class={`flex flex-col items-center gap-${gap} ${className}`}>
+	<slot />
+</Tag>

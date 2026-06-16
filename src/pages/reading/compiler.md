@@ -1,13 +1,14 @@
 ---
 layout: ../../layouts/ReadingLayout.astro
 page: compiler
-description: Writing an Compiler in Go
+title: Writing an Compiler in Go
+description: A bytecode compiler written in golang
 thumbnail: /compiler-cover.jpg
 thumbnail_dark: /compiler-cover.jpg
 heroImage: /compiler-cover.jpg
 heroImage_dark: /compiler-cover.jpg
 info: https://compilerbook.com/
-status: in-progress
+status: read
 ---
 
 A sequel to the interpreter book and goes a bit further and walks through

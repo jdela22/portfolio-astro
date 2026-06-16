@@ -1,0 +1,25 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	page: string;
+	prefix: string;
+}
+
+const { title = "", description = "", page = "", prefix = "" } = Astro.props;
+---
+
+<li class="group">
+	<a href={`/${prefix}/${page}`}>
+		<section
+			class="border-b border-b-gray-600 group-hover:border-b-alt group-hover:text-alt transition-all duration-500"
+		>
+			<h2 class="text-xl">{title}</h2>
+		</section>
+		<p
+			class="opacity-100 md:opacity-0 md:group-hover:opacity-100 md:group-hover:animate-in md:group-hover:fade-in md:group-hover:slide-in-from-bottom md:group-hover:duration-500 md:group-hover:ease-out md:group-hover:fill-mode-both text-muted-foreground mt-1"
+		>
+			{description}
+		</p>
+	</a>
+</li>

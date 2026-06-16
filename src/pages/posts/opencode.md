@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 page: opencode
-description: OpenCode
+title: OpenCode
+description: Open-source agent harness
 thumbnail: /opencode_logo_light.svg
 thumbnail_dark: /opencode_logo_dark.svg
 heroImage_dark: /opencode_wordmark_dark.svg

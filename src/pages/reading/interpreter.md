@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/ReadingLayout.astro
 page: interpreter
-description: Writing an Interpreter in Go
+title: Writing an Interpreter in Go
+description: A tree-walking interpreter written in golang
 thumbnail: /interpreter-cover.jpg
 thumbnail_dark: /interpreter-cover.jpg
 heroImage: /interpreter-cover.jpg

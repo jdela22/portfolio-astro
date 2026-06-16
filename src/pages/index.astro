@@ -1,34 +1,52 @@
 ---
-import { Github, Linkedin, Mail } from "lucide-react";
+import SocialLinks from "../components/SocialLinks.astro";
+import ContentSection from "../components/ContentSection.astro";
 import profilePic from "../assets/profilepic.jpg";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<section class="flex flex-col gap-8 items-center text-sm">
-		<img class="rounded-full size-60 " src={profilePic.src} alt="profile">
-		<div class="flex gap-3">
-			<a href="https://www.linkedin.com/in/jareddelapasse/" target="_blank">
-				<Linkedin className="cursor-pointer" />
-			</a>
+<!-- Only run the animations a single time on app load -->
+<script is:inline>
+if (window.__introAnimationPlayed) {
+	document.querySelectorAll(".animate-in").forEach((el) => {
+		el.style.animation = "none";
+		el.style.opacity = "1";
+		el.style.transform = "none";
+	});
+} else {
+	window.__introAnimationPlayed = true;
+}
+</script>
 
-			<a href="https://github.com/jdela22" target="_blank">
-				<Github className="cursor-pointer" />
-			</a>
-			<a href="mailto:jareddelapasse@gmail.com">
-				<Mail className="cursor-pointer" />
-			</a>
+<Layout>
+	<ContentSection as="section" gap={8} class="text-sm">
+		<img
+			class="rounded-full size-60 animate-in fade-in slide-in-from-bottom
+		duration-1000 ease-out fill-mode-both"
+			src={profilePic.src}
+			alt="profile"
+		>
+		<div
+			class="flex gap-3 animate-in fade-in ease-out duration-1500 delay-800 fill-mode-both"
+		>
+			<SocialLinks />
 		</div>
 		<article class="flex flex-col gap-4">
-			<p>Hi! I'm Jared Delapasse.</p>
-			<p>
-				I'm a software engineer with a focus on frontend. This is a site I made
-				to act as a quasi blog to talk about various topics I'm interested in
-				and tools I'm using.
+			<p
+				class="animate-in fade-in slide-in-from-bottom
+		duration-1000 ease-out fill-mode-both text-lg delay-300"
+			>
+				Hi! I'm Jared Delapasse.
+			</p>
+			<p
+				class="animate-in fade-in slide-in-from-bottom
+		duration-1000 ease-out fill-mode-both text-lg delay-500"
+			>
+				I'm a software engineer with a current focus on frontend. I made this
+				site to keep track of projects I'm working on (both programming related
+				and not), act a personal book club for interesting programming books,
+				and share my ever-evolving development workflow
 			</p>
 		</article>
-	</section>
+	</ContentSection>
 </Layout>

@@ -25,7 +25,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
 						<a href="/">
 							<div
 								dangerouslySetInnerHTML={{ __html: logoRaw }}
-								className="size-8 flex items-center justify-center"
+								className="size-8 flex items-center justify-center hover:text-alt transition-colors duration-500"
 							/>
 						</a>
 					</NavigationMenuItem>
@@ -39,7 +39,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
 							asChild
 							className={navigationMenuTriggerStyle()}
 						>
-							<a href="/StuffIUse">Stuff I use</a>
+							<a href="/StuffIUse">My Workflow</a>
 						</NavigationMenuLink>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
@@ -71,7 +71,7 @@ export const Header: React.FC<React.ComponentProps<typeof NavigationMenu>> = (
 						<a href="/">
 							<div
 								dangerouslySetInnerHTML={{ __html: logoRaw }}
-								className="size-8 flex items-center justify-center"
+								className="size-8 flex items-center justify-center hover:text-alt transition-colors duration-500"
 							/>
 						</a>
 					</NavigationMenuItem>

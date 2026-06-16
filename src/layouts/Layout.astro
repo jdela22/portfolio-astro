@@ -17,7 +17,7 @@ const applyTheme = () => {
 			: "light";
 	};
 	const isDark = getThemePreference() === "dark";
-	document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+	document.documentElement.classList[isDark ? "remove" : "add"]("light");
 };
 
 // Apply theme on initial load
@@ -39,8 +39,8 @@ if (typeof localStorage !== "undefined") {
 		// Don't update localStorage during transitions
 		if (isTransitioning) return;
 
-		const isDark = document.documentElement.classList.contains("dark");
-		localStorage.setItem("theme", isDark ? "dark" : "light");
+		const isLight = document.documentElement.classList.contains("light");
+		localStorage.setItem("theme", isLight ? "light" : "dark");
 	});
 	observer.observe(document.documentElement, {
 		attributes: true,
@@ -49,22 +49,19 @@ if (typeof localStorage !== "undefined") {
 }
 </script>
 
-<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href="/favicon.svg"
-		>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 		<meta name="generator" content={Astro.generator}>
 		<title>Jared Delapasse</title>
 	</head>
 	<body class="text-sm">
 		<Header client:load />
-		<main class="px-4 sm:px-[10%] lg:px-[20%] xl:px-[30%] xxl:[40%]  mt-10"><slot /></main>
+		<main class="px-4 sm:px-[10%] lg:px-[20%] xl:px-[30%] xxl:[40%]  mt-10">
+			<slot />
+		</main>
 	</body>
 	<ClientRouter />
 </html>
@@ -72,7 +69,7 @@ if (typeof localStorage !== "undefined") {
 <style>
 html,
 body {
-	font-family: "Geist Mono Variable", monospace;
+	/* font-family: "Inter", sans-serif; */
 	margin: 0;
 	width: 100%;
 	height: 100%;

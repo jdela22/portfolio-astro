@@ -26,7 +26,7 @@ export const SideMenu: React.FC<React.ComponentProps<typeof Sheet>> = () => {
 				</SheetHeader>
 				<div className="grid flex-1 auto-rows-min gap-6 px-4">
 					<a href="/StuffIUse" className="grid gap-3">
-						Stuff I use
+						My Workflow
 					</a>
 					<a href="/Reading" className="grid gap-3">
 						Reading

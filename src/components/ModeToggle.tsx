@@ -3,16 +3,16 @@ import * as React from "react";
 import { Button } from "@/components/ui/button";
 
 export function ModeToggle() {
-	const [theme, setThemeState] = React.useState<"light" | "dark">("light");
+	const [theme, setThemeState] = React.useState<"light" | "dark">("dark");
 
 	React.useEffect(() => {
-		const isDarkMode = document.documentElement.classList.contains("dark");
-		setThemeState(isDarkMode ? "dark" : "light");
+		const isLightMode = document.documentElement.classList.contains("light");
+		setThemeState(isLightMode ? "light" : "dark");
 	}, []);
 
 	React.useEffect(() => {
-		document.documentElement.classList[theme === "dark" ? "add" : "remove"](
-			"dark",
+		document.documentElement.classList[theme === "light" ? "add" : "remove"](
+			"light",
 		);
 	}, [theme]);
 

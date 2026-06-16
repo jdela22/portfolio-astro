@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/ReadingLayout.astro
 page: ddia
-description: D.D.I.A.
+title: Designing Data Intensive Applications
+description: Insight into desiging robust, scalable, and fault-tolerant systems
 thumbnail: /ddia-cover.jpeg
 thumbnail_dark: /ddia-cover.jpeg
 heroImage: /ddia-cover.jpeg

@@ -8,12 +8,12 @@
 
       .cls-1, .cls-2, .cls-3 {
         fill: none;
-        stroke: #231f20;
+        stroke: currentColor;
         stroke-linecap: round;
       }
 
       .cls-4 {
-        fill: #231f20;
+        fill: currentColor;
       }
 
       .cls-5 {

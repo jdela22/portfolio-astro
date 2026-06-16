@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 page: tmux
-description: Tmux
+title: Tmux
+description: Terminal multiplexer
 thumbnail: /tmux_thumbnail.svg
 thumbnail_dark: /tmux_thumbnail.svg
 heroImage: /tmux_logo.png
