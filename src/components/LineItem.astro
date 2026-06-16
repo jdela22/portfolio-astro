@@ -4,20 +4,35 @@ interface Props {
 	description: string;
 	page: string;
 	prefix: string;
+	iconSrc?: string;
+	iconDarkSrc?: string;
+	iconClass?: string;
+	href?: string;
 }
 
-const { title = "", description = "", page = "", prefix = "" } = Astro.props;
+const { title = "", description = "", page = "", prefix = "", iconSrc = "", iconDarkSrc = "", iconClass = "", href = "" } = Astro.props;
 ---
 
 <li>
 	<a
-		href={`/${prefix}/${page}`}
+		href={href || `/${prefix}/${page}`}
+		{...(href ? { target: "_blank" } : {})}
 		class="group hover:text-alt active:text-alt transition-all duration-500"
 	>
 		<section
 			class="border-b border-b-gray-600 group-hover:border-b-alt group-active:border-b-alt transition-all duration-500"
 		>
-			<h2 class="text-xl">{title}</h2>
+			<div class="flex items-center gap-2">
+				{iconSrc && iconDarkSrc ? (
+					<>
+						<img src={iconDarkSrc} alt="" class={`size-5 dark:hidden ${iconClass}`} />
+						<img src={iconSrc} alt="" class={`size-5 hidden dark:block ${iconClass}`} />
+					</>
+				) : iconSrc ? (
+					<img src={iconSrc} alt="" class={`size-5 ${iconClass}`} />
+				) : null}
+				<h2 class="text-xl">{title}</h2>
+			</div>
 		</section>
 		<p class="text-muted-foreground mt-1">
 			{description}
