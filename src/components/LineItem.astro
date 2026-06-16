@@ -17,10 +17,10 @@ const { title = "", description = "", page = "", prefix = "", iconSrc = "", icon
 	<a
 		href={href || `/${prefix}/${page}`}
 		{...(href ? { target: "_blank" } : {})}
-		class="group hover:text-alt active:text-alt transition-all duration-500"
+		class="group hover:text-alt active:text-alt transition-all duration-500 max-sm:duration-0"
 	>
 		<section
-			class="border-b border-b-gray-600 group-hover:border-b-alt group-active:border-b-alt transition-all duration-500"
+			class="border-b border-b-gray-600 group-hover:border-b-alt group-active:border-b-alt transition-all duration-500 max-sm:duration-0"
 		>
 			<div class="flex items-center gap-2">
 				{iconSrc && iconDarkSrc ? (
